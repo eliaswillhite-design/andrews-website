@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- STATUS: High School Senior | Aspiring UX Engineer | Tea Enthusiast -->
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+
+    <!-- 1. FONTS (FILLED IN) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+
+    <style>
+        /* 2. THEME VARIABLES */
+        :root {
+            --bg-color: #F9F7F2;
+            --container-bg: #FFFFFF;
+            --text-main: #2D3748;
+            --header-color: #2C5282;
+            --link-color: #E53E3E;
+            --border-color: #E2E8F0;
+        }
+
+        body.dark-theme {
+            --bg-color: #1A202C;
+            --container-bg: #2D3748;
+            --text-main: #E2E8F0;
+            --header-color: #63B3ED;
+            --link-color: #FC8181;
+            --border-color: #4A5568;
+        }
+/* When Reading Mode is active, hide the extra stuff */
+body.reading-mode .profile-img, 
+body.reading-mode .nav-links, 
+body.reading-mode hr {
+    display: none;
+}
+
+/* Make the text the only focus */
+body.reading-mode .container {
+    max-width: 600px; /* Narrower for better focus */
+    border: none;
+    box-shadow: none;
+}
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Lora', serif;
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.8;
+            letter-spacing: 0.03em;
+            word-spacing: 0.1em;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: var(--container-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        h1 { font-family: 'Playfair Display', serif; color: var(--header-color); }
+
+        .profile-img {
+            width: 300px;
+            height: auto;
+            border-radius: 50%; /* Makes your faceclaim image a circle */
+            border: 4px solid var(--header-color);
+            margin-bottom: 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .nav-links a {
+            padding: 10px 20px;
+            background-color: var(--header-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+        .nav-links a:hover {
+            transform: scale(1.05);
+            background-color: var(--link-color);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background: var(--header-color);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+
+   <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle between light and dark mode">
+    🌓 Toggle Mode
+</button>
+
+    <div class="container">
+        <h1>Welcome to my website!</h1>
+
+        <img src="author.jpg" alt="Andrew" class="profile-img">
+
+        <p style="font-size: 1.2rem; font-weight: bold;">hello! welcome to my corner of the internet! i hope you will stay and have a look around!</p>
+
+        <p>Hello! My name is Andrew Spear, and I am a young author. I currently have several books in progress, and in my spare time enjoy gardening and crafts, playing video games, reading, and playing with our dog, Pana. I am currently in the process of learning more about the publishing industry, and how I can refine my books before publication.</p>
+
+        <p>here is a link to the blurbs on my books, as well as the art! if you would consider supporting my work, i would be greatfull!</p>
+
+        <!-- FIXED RELATIVE LINKS -->
+        <div class="nav-links">
+            <a href="books.html">Book Recs!</a> 
+            <a href="Artwork.html">Art Gallery</a>
+            <a href="book blurbs.html">Book Blurbs!</a>
+            <a href="support.html">Support my Work!</a>
+        </div>
+
+        <hr style="margin: 40px 0; border: 0; border-top: 1px solid var(--border-color);">
+
+        <!-- CONTACT SECTION (MOVED INSIDE CONTAINER) -->
+        <div class="book-section" id="contact">
+            <h2>Get in Touch</h2>
+            <p>If you have questions about <em>Cybernet</em> or my other books, I would love to hear from you!</p>
+            
+            <div class="nav-links">
+                <a href="mailto:spearkidz7@gmail.com" class="email-btn">
+                    ✉ Email Me Directly
+                </a>
+            </div>
+            
+            <p style="font-size: 0.85rem; margin-top: 20px; opacity: 0.8;">
+                (This will open your preferred email app)
+            </p>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleTheme() { document.body.classList.toggle("dark-theme"); }
+    </script>
+</body>
+</html>

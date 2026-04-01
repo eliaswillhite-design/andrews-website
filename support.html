@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support My Work</title>
+
+    <!-- 1. CORRECTED FONTS LINK -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #F9F7F2;
+            --container-bg: #FFFFFF;
+            --text-main: #2D3748;
+            --header-color: #2C5282;
+            --link-color: #E53E3E;
+            --border-color: #E2E8F0;
+        }
+
+        body.dark-theme {
+            --bg-color: #1A202C;
+            --container-bg: #2D3748;
+            --text-main: #E2E8F0;
+            --header-color: #63B3ED;
+            --link-color: #FC8181;
+            --border-color: #4A5568;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Lora', serif;
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.8;
+            letter-spacing: 0.03em;
+            word-spacing: 0.1em;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: var(--container-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .home-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--link-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--header-color); }
+
+        .support-card {
+            background-color: var(--bg-color);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        /* GOAL METER STYLES */
+        .goal-container {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .goal-bar-bg {
+            width: 100%;
+            height: 25px;
+            background-color: #e0e0e0;
+            border-radius: 50px;
+            border: 2px solid var(--border-color);
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .goal-bar-fill {
+            height: 100%;
+            background-color: #38A169;
+            transition: width 1s ease-in-out;
+        }
+
+        /* REWARD PREVIEW STYLES */
+        .reward-preview {
+            margin: 40px 0;
+            padding: 25px;
+            background-color: var(--bg-color);
+            border: 2px dashed var(--header-color);
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .sample-img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+
+        .action-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: var(--header-color);
+            color: white !important;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: 0.2s;
+        }
+
+        .action-btn:hover {
+            transform: scale(1.05);
+            background-color: var(--link-color);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background: var(--header-color);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        body.dark-theme .goal-bar-bg { background-color: #4A5568; }
+    </style>
+</head>
+<body>
+
+    <button class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Mode</button>
+
+    <div class="container">
+        <a href="homepage.html" class="home-link">← Return to Homepage</a>
+
+        <h1>Thank you for considering investing in my work!</h1>
+
+        <div class="support-card">
+            <p>I currently need $30.00(USD) monthly to continue the course that will allow me to finish my book and move on to the publication stage.</p>
+            
+            <p><strong>The $5.00 Support Tier:</strong> If you choose to support me at $5.00 a month, you can choose one of my five books and receive a short section handwritten, signed by the author, and mailed to you!</p>
+
+            <p>You can also join my email list to get updates on the progress towards publication, short stories, and what I have been up to.</p>
+
+            <!-- GOAL METER SECTION -->
+            <div class="goal-container">
+                <p><strong>Monthly Support Goal: $30.00</strong></p>
+                <div class="goal-bar-bg">
+                    <!-- Set to 0% initially -->
+                    <div class="goal-bar-fill" style="width: 0%;"></div> 
+                </div>
+                <p style="font-size: 0.9rem; margin-top: 10px;">Currently at <strong>$0.00</strong> of $30.00 monthly goal!</p>
+            </div>
+            
+            <center>
+                <!-- FIXED EMAIL LINK -->
+                <a href="mailto:spearkidz7@gmail.com" class="action-btn">✉ Contact Me to Start Supporting</a>
+            </center>
+        </div>
+
+        <!-- REWARD PREVIEW SECTION -->
+        <div class="reward-preview">
+            <h3>Supporter Reward Preview</h3>
+            <p>Here is an example of the handwritten, signed section you will receive by mail!</p>
+            <img src="reward.jpg" alt="Sample of handwritten book section" class="sample-img">
+            <p><em>Each reward is personally written and signed by Andrew Spear.</em></p>
+        </div>
+
+        <h2>What is the course I am taking?</h2>
+        <p style="text-align: left;">I am a part of a community of young writers, as a part of the <strong>Young Writers Workshop</strong>, founded by Brett Harris and Kara Swanson.</p>
+        <p style="text-align: left;">They founded it with the intention of helping young writers to learn how to share their stories, as well as join a community of people their age who are all authors.</p>
+
+        <center>
+            <a href="https://theyoungwriter.com/workshop-students" target="_blank" class="action-btn">Learn More About the Workshop</a>
+        </center>
+    </div>
+
+    <script>
+        function toggleTheme() { document.body.classList.toggle("dark-theme"); }
+    </script>
+</body>
+</html>

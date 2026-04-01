@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommendations!</title>
+
+    <!-- 1. CORRECTED GOOGLE FONTS LINK -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #F9F7F2;
+            --container-bg: #FFFFFF;
+            --text-main: #2D3748;
+            --header-color: #2C5282;
+            --link-color: #E53E3E;
+            --border-color: #E2E8F0;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #1A202C;
+                --container-bg: #2D3748;
+                --text-main: #E2E8F0;
+                --header-color: #63B3ED;
+                --link-color: #FC8181;
+                --border-color: #4A5568;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px; /* Space for the sticky nav */
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Lora', serif; 
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+            letter-spacing: 0.03em;
+            word-spacing: 0.1em;
+            transition: all 0.3s ease;
+        }
+
+        /* STICKY NAV BAR */
+        .main-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: var(--container-bg);
+            border-radius: 50px;
+            border: 2px solid var(--border-color);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            position: sticky;
+            top: 10px;
+            z-index: 1000;
+        }
+
+        .main-nav a {
+            padding: 10px 20px;
+            background-color: var(--bg-color);
+            border-radius: 25px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            color: var(--header-color);
+            text-decoration: none;
+        }
+
+        .main-nav a:hover {
+            background-color: var(--header-color);
+            color: white !important;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 40px;
+            background-color: var(--container-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--header-color);
+            margin-bottom: 20px;
+        }
+
+        .book-section { margin-bottom: 60px; }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Specific fix for the Hoaw placeholder size */
+        .img-small {
+            width: 250px;
+        }
+
+        hr { border: 0; border-top: 1px solid var(--border-color); margin: 50px 0; }
+
+        @media (max-width: 480px) {
+            .main-nav { flex-direction: column; border-radius: 15px; }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="main-nav">
+    <a href="#wolf">Heart of a Wolf</a>
+    <a href="#crescent">Crescent Legacy</a>
+    <a href="#Machine">Machine </a>
+    <a href="#newsletter">My Newsletter</a>
+</nav>
+
+<div class="container">
+<a href="homepage.html" class="home-link">← Return to Homepage</a>
+
+    <h1>Hey y'all! I would highly recommend checking these out!</h1>
+
+    <!-- Book 1 -->
+    <div class="book-section" id="wolf">
+        <h2><em>The Heart of a Wolf</em> by Amelia Maia</h2>
+        <p>Life as a wolf isn’t easy. Especially a mystic wolf.
+
+Moonwatch and her pack face dangers unseen in the form of human hunters and nothing can save them… nothing except leaving the land she was born in.
+
+Join Moonwatch and the Stone Creek Pack, based off the Rogue River pack, on an adventure that takes them far out of their comfort zone and brings them to meet creatures they never imagined exsited. </p>
+        <!-- Added .img-small class to fix the size -->
+        <img src="Hoaw art.jpg" alt="heart of a wolf cover" class="img-small">
+        <p><a href="https://docs.google.com/forms/d/1taS3HwK37SCVCDSm46Tj8W6mFWvs3shCZlljzgT91k0/edit" style="color: var(--link-color); font-weight: bold;">Purchase your copy now!</a></p>
+    </div>
+
+    <hr>
+
+    <!-- Book 2 -->
+    <div class="book-section" id="crescent">
+        <h2><em>Crescent Legacy</em> by Gabrielle Gervais</h2> 
+        <p>Aionia is a world made up of five regions, each with their own laws and governments. Independent of these laws are the guilds, which follow their own paths and live on unique ships that have hidden special properties. Stirring in the world’s shadows is a dark plague that strikes often and without warning. This plague, called Contagion, hinders the peace and safety of everyone in the world. No one is immune.
+
+Sixteen-year-old Luna serves in Ranvai, a guild of noble mercenaries who have sworn to never take lives. Living alongside her guild leader, her best friend, and her younger sister, she’s contented with her circumstances; until Contagion, and those who seek to control it, tear everything she knows to shreds.
+
+Thrown into new and dangerous circumstances and far from any semblance of peace, Luna is forced to confront the truths of the world, of Contagion, and most importantly, of her own past.</p>
+        <img src="Crecent Legacy.png" alt="Crescent Legacy cover" width="350">
+        <!-- Author's Blog Link here -->
+        <p><ahttps://docs.google.com/forms/d/1BFpLHuRU4ImlLDbdN_B-R38PfKPGyg8GPQrAEAdpsJU/edit" style="color: var(--link-color); font-weight: bold;">Gabrielle's Blog Signup!</a></p>
+    </div>
+
+    <hr>
+
+ <!-- Book 2 -->
+    <div class="book-section" id="Machine">
+        <h2><em>Machine </em> by Anita Hunting</h2> 
+        <p>If you’re nothing but a MACHINE, what’s left for you when you lose your purpose?</p>
+
+<p>Blake Cyrus has been raised in a soldiers’ institute since childhood. And he has only one goal — to fight and finally win the war that has plagued his country for decades. But Blake’s future is stopped in its tracks when he becomes the victim of a devastating accident, and the Institute is far too strained by the war to waste time caring about their injured soldiers.
+Cast out as useless with nothing but a month’s rent in a run-down apartment and a set of cybernetics to replace the limbs he lost, Blake’s only hope comes from his chance meeting with a secretive prizefighter and her strange younger sister. With their aid, he begins to build for himself a new life… but in this war-ruined society slowly falling apart at the seams, each turn blurs the lines between right and wrong and truth and lie, and Blake will soon have to question once and for all who he is and where his loyalties lie.</p>
+        <img src="Machine.png" alt="Machine cover" width="350">
+        <!-- Author's Blog Link here -->
+        <p><ahttps://docs.google.com/forms/d/1BFpLHuRU4ImlLDbdN_B-R38PfKPGyg8GPQrAEAdpsJU/edit" style="color: var(--link-color); font-weight: bold;">Get your copy today!</a></p>
+    </div>
+
+
+    <!-- YOUR PERSONAL NEWSLETTER -->
+    <div class="book-section" id="newsletter">
+        <h2>My Newsletter</h2>
+        <p>Stay updated with my latest book finds and recommendations!</p>
+        <p><a href="#" style="color: var(--link-color); font-weight: bold;">Sign up for my newsletter here!</a></p>
+    </div>
+</div>
+
+</body>
+</html>

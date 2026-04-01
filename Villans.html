@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybernet Villans</title>
+
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #F9F7F2;
+            --container-bg: #FFFFFF;
+            --text-main: #2D3748;
+            --header-color: #2C5282;
+            --link-color: #E53E3E;
+            --border-color: #E2E8F0;
+        }
+
+        body.dark-theme {
+            --bg-color: #1A202C;
+            --container-bg: #2D3748;
+            --text-main: #E2E8F0;
+            --header-color: #63B3ED;
+            --link-color: #FC8181;
+            --border-color: #4A5568;
+        }
+
+        .progress-container { width: 100%; height: 6px; background: #ccc; position: fixed; top: 0; left: 0; z-index: 2000; }
+        .progress-bar { height: 6px; background: var(--link-color); width: 0%; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Lora', serif;
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.8;
+            letter-spacing: 0.03em;
+            word-spacing: 0.1em;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: var(--container-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .home-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--link-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .character-card {
+            margin-bottom: 60px;
+            padding-bottom: 20px;
+        }
+
+        h1, h2 { font-family: 'Playfair Display', serif; color: var(--header-color); }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            border: 2px solid var(--border-color);
+            margin: 20px 0;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background: var(--header-color);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+/* 1. MAKE IT STICKY */
+.jump-menu {
+    background-color: var(--container-bg); /* Matches the box color */
+    padding: 15px;
+    border-radius: 15px;
+    border: 2px solid var(--border-color);
+    margin-bottom: 40px;
+    
+    /* This makes it stay at the top */
+    position: sticky;
+    top: 10px; 
+    z-index: 1000; /* Keeps it above the book images */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* 2. MOBILE-FRIENDLY BUTTONS (FLEXBOX) */
+.jump-menu .nav-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows buttons to wrap to the next line on phones */
+    gap: 10px;       /* Space between buttons */
+}
+
+/* 3. BUTTON STYLING (MATCHES RECS PAGE) */
+.jump-menu .nav-links a {
+    padding: 10px 15px;
+    background-color: var(--header-color);
+    color: white !important;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.85rem;
+    transition: 0.2s;
+    text-align: center;
+}
+
+/* 4. PHONE TWEAK: Stack them if the screen is tiny */
+@media (max-width: 480px) {
+    .jump-menu .nav-links {
+        flex-direction: column; /* Stacks buttons vertically on small phones */
+    }
+    .jump-menu .nav-links a {
+        width: 100%; /* Makes buttons full-width for easy tapping */
+        box-sizing: border-box;
+    }
+}
+.hero-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #2C5282; /* Professional Hero Blue */
+    color: white !important;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background-color: #2b6cb0;
+    transform: translateX(-5px); /* Slides slightly left to show "going back" */
+}
+
+/* Home Button specifically for the Nav */
+.home-btn {
+    background-color: var(--text-main) !important;
+    color: white !important;
+}
+    </style>
+</head>
+<script>
+    function toggleTheme() { document.body.classList.toggle("dark-theme"); }
+    window.onscroll = function() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("myBar").style.width = scrolled + "%";
+    };
+</script>
+<body>
+<div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
+    <button class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Mode</button>
+
+    <div class="container">
+        <a href="homepage.html" class="home-link">← Return to Homepage</a>
+<h1> Meet the villans!</h1>
+
+<!-- Ben -->
+        <div class="character-card">
+            <h1>Ben</h1>
+            <img src="placeholder2.png" alt="Placeholder" width="350">
+            <p><strong>this is Ben. the cunning leader of the team, Ben is dangerous and unpredictable. watch out, or he may come after you!</strong></p>
+        </div>
+
+        <hr>
+
+ <!-- Josh -->
+        <div class="character-card">
+            <h2>Josh</h2>
+            <img src="the assasin.jpeg" alt="Assasin" width="350">
+            <p><strong>this is Josh. he is an assaisin for Ben, extremly Agile, and ready for anything. uses a bow, sword, knives, a gun, and anything else he needs to get the job done. </strong></p>
+        </div>
+
+        <hr>
+<!-- Jeremy -->
+        <div class="character-card">
+            <h2>Jeremy </h2>
+            <img src="the city.png" alt="city" width="350">
+            <p><strong>this is Jeremy. he is a hacker, with skills olmost on Par with Drew, but not qite able to find him. he helps Ben with all of his technicalneeds.  </strong></p>
+        </div>
+<hr>
+<div class="book-section">
+    <h2>Finished with the Villains?</h2>
+    <p>Go back to see if  the team can stop them!</p>
+    
+    <div class="nav-links">
+        <a href="Artwork.html" class="hero-btn">← Return to Heroes</a>
+    </div>
+</div>
+
+        <hr>
+
+
+
+
+
+
